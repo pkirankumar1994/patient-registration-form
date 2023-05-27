@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Registration Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <form id="patient-form">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <h1>Patient Registration Form</h1>
+        <a href="/data">View Data</a>
+      </div>
+      <label for="name">Patient Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required />
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="cast">Cast:</label>
+      <input type="text" id="cast" name="cast" required />
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required />
+
+      <label for="marital-status">Marital Status:</label>
+      <select id="marital-status" name="marital_status" required>
+        <option value="">Select marital status</option>
+        <option value="single">Single</option>
+        <option value="married">Married</option>
+        <option value="divorced">Divorced</option>
+        <option value="widowed">Widowed</option>
+      </select>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" required></textarea>
+
+      <label for="insurance">Insurance Name:</label>
+      <input type="text" id="insurance" name="insurance" required />
+
+      <label for="history">Past Medical History:</label>
+      <textarea id="history" name="past_medical_history"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    <div id="success-msg"></div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</html>

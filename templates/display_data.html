@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient List</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style1.css') }}"
+    />
+  </head>
+  <body>
+    <h1>Patient List</h1>
+    <div
+      style="display: flex; justify-content: flex-end; align-items: center"
+    >
+      <a href="/">View Form</a>
+    </div>
+    <table>
+      <thead>
+        <tr>
+	  <th>ID</th>
+          <th>Name</th>
+          <th>Phone Number</th>
+          <th>Gender</th>
+          <th>Cast</th>
+          <th>Date of Birth</th>
+          <th>Marital Status</th>
+          <th>Address</th>
+          <th>Insurance Name</th>
+          <th>Past Medical History</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for patient in patients %}
+        <tr>
+          <td>{{ patient[0] }}</td>
+          <td>{{ patient[1] }}</td>
+          <td>{{ patient[2] }}</td>
+          <td>{{ patient[3] }}</td>
+          <td>{{ patient[4] }}</td>
+          <td>{{ patient[5] }}</td>
+          <td>{{ patient[6] }}</td>
+          <td>{{ patient[7] }}</td>
+          <td>{{ patient[8] }}</td>
+	  <td>{{ patient[9] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
